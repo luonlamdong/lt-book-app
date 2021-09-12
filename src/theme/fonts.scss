@@ -1,0 +1,30 @@
+$typography: "2" 38px 44px, "3" 30px 36px, "4" 24px 30px, "5" 20px 26px,
+  "6" 16px 22px, "7" 14px 18px, "8" 12px 18px;
+
+@each $name, $size, $height in $typography {
+  .h#{$name} {
+    font-weight: 600;
+    font-size: $size;
+    line-height: $height;
+  }
+  .b#{$name} {
+    font-weight: 400;
+    font-size: $size;
+    line-height: $height;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  @each $name, $size, $height in $typography {
+    .h#{$name} {
+      font-weight: 600;
+      font-size: $size + 8px !important;
+      line-height: $height + 8px !important;
+    }
+    .b#{$name} {
+      font-weight: 400;
+      font-size: $size + 8px !important;
+      line-height: $height + 8px !important;
+    }
+  }
+}
