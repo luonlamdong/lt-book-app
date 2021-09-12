@@ -3,14 +3,14 @@
     <img src="./assets/images/book2.jpg" alt="image1" class="img imgOne">
     <img src="./assets/images/book1.jpg" alt="image1" class="img imgTwo">
   </div>
-  <ion-header  class="ion-no-border">
+  <ion-header class="ion-no-border">
     <app-header></app-header>
   </ion-header>
   <ion-content>
     <div class="container">
       <div class="form">
         <div class="title">
-          Login
+          SignIn
         </div>
         <div class="form-control">
           <ion-input placeholder="Username">
@@ -22,13 +22,25 @@
           </ion-input>
           <img src="./assets/icon/lock.svg" />
         </div>
+        <div class="form-control">
+          <ion-input placeholder="Email">
+          </ion-input>
+          <img src="./assets/icon/mail.svg" />
+        </div>
+        <div class="form-control">
+          <ion-input placeholder="Phone" type="Number">
+          </ion-input>
+          <img src="./assets/icon/telephone.svg" />
+        </div>
+        <div class="form-control">
+          <ion-input placeholder="Address">
+          </ion-input>
+          <img src="./assets/icon/pin.svg" />
+        </div>
         <div class="button">Login</div>
-        <div class="button">Login with Google</div>
 
       </div>
     </div>
     <p class="wellcome">Wellcome to LTBook</p>
-    <p class="signIn" (click)="signIn()">SignIn Account</p>
-
   </ion-content>
 </ion-content>
