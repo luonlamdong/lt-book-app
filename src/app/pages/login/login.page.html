@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="loginPage">
+  <div class="blurBackground">
+    <img src="./assets/images/book2.jpg" alt="image1" class="img imgOne">
+    <img src="./assets/images/book1.jpg" alt="image1" class="img imgTwo">
+  </div>
+  <ion-header>
+    <app-header></app-header>
 
-<ion-content>
+  </ion-header>
+  <ion-content>
+    <div class="container">
+      <div class="form">
+        <div class="title">
+          Login
+        </div>
+        <div class="form-control">
+          <ion-input placeholder="Username">
+          </ion-input>
+          <img src="./assets/icon/user.svg" />
+        </div>
+        <div class="form-control">
+          <ion-input placeholder="Password" type="Password">
+          </ion-input>
+          <img src="./assets/icon/lock.svg" />
+        </div>
+        <div class="button">Login</div>
+        <div class="button">Login with Google</div>
 
+      </div>
+    </div>
+  </ion-content>
 </ion-content>
