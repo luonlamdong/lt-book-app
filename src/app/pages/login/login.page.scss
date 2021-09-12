@@ -4,23 +4,23 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    .img{
-        position: absolute;
-        object-fit: cover;
+    .img {
+      position: absolute;
+      object-fit: cover;
     }
-    .imgOne{
-        width: 247px;
-        height: 295px;
-        z-index: -1;
-        top:138px;
-        left: -20px;
+    .imgOne {
+      width: 247px;
+      height: 295px;
+      z-index: -1;
+      top: 138px;
+      left: -20px;
     }
-    .imgTwo{
-        z-index: -2;
-        top: 336px;
-        left: -20px;
-        width: 318px;
-        height: 302px;
+    .imgTwo {
+      z-index: -2;
+      top: 336px;
+      left: -20px;
+      width: 318px;
+      height: 302px;
     }
     background: rgba(0, 0, 0, 0.7);
   }
@@ -30,39 +30,52 @@
   }
   ion-content {
     --background: transparent;
-    font-family: 'AV';
-    .form{
-        width: 85%;
-        margin: 0 auto;
-        .title{
-            color: white;
-            font-size: 45px;
+    font-family: "AV";
+    overflow-y: hidden;
+    .form {
+      width: 85%;
+      margin: 0 auto;
+      margin-top: 100px;
+      .title {
+        color: white;
+        font-size: 45px;
+        text-align: right;
+        margin-bottom: 42px;
+      }
+      .form-control {
+        margin-bottom: 15px;
+        position: relative;
+        ion-input {
+          --background: white;
+          height: 50px;
+          border-radius: 5px;
+          text-align: center;
+          font-size: 20px;
         }
-        .form-control{
-            margin-bottom: 15px;
-            position: relative;
-            ion-input{
-                --background:white;
-                height: 50px;
-                border-radius:5px;
-                text-align: center;
-            }
-            img{
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                right: 10px;
-                top: 50%;
-                z-index: 2;
-                transform: translate(0,-50%);
-            }
+        img {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          z-index: 2;
+          transform: translate(0, -50%);
         }
-        .button{
-            width: 100%;
-            height: 60px;
-            background-color: #CDB018;
-            margin-bottom: 15px;
+        &:nth-child(3){
+            margin-bottom: 25px;
         }
+      }
+      .button {
+        width: 100%;
+        height: 50px;
+        background-color: #cdb018;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        padding: 12px 0;
+      }
     }
   }
 }
