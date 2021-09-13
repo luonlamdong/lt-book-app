@@ -110,7 +110,7 @@
       <ion-label class="slider_item-right back-to-top h7">Back to top >></ion-label>
     </ion-slide>
   </ion-slides>
-  <div class="music">
+  <div class="music" [class.rotate360]="rotate360" (click)="rotateActive()">
     <img src="assets/images/music.png" alt="">
   </div>
 </ion-content>

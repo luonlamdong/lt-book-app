@@ -64,6 +64,25 @@ ion-header {
 .music {
   position: fixed;
   left: 5%;
-  bottom: 2%;
+  bottom: 3%;
   z-index: 1;
+}
+
+.rotate360 {
+  animation: rotate360 10s linear 0s infinite;
+  -webkit-animation: rotate360 10s linear 0s infinite;
+  -moz-animation: rotate360 10s linear 0s infinite;
+  -o-animation: rotate360 10s linear 0s infinite;
+}
+@keyframes rotate360 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+  }
 }
