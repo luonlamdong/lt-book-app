@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
+  @ViewChild('audioOption') audioPlayerRef: ElementRef;
   menuHeight;
   wherePage='home';
   option = {
@@ -19,11 +21,11 @@ export class HomePage implements OnInit{
   rotateActive(){
     if(this.rotate360 === false){
       this.rotate360 = true;
+      this.audioPlayerRef.nativeElement.play();
     }
     else{
       this.rotate360 = false;
+      this.audioPlayerRef.nativeElement.pause();
     }
-  }
-
   }
 }

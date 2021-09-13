@@ -1,6 +1,5 @@
 <ion-header>
-  <app-header 
-  [menuHeight]="menuHeight" [wherePage] = "wherePage"></app-header>
+  <app-header></app-header>
 </ion-header>
 <ion-content>
   <!-- <div class="slider">
@@ -108,10 +107,13 @@
           of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less 
           normal distribution of letters</p>
       </ion-text>
-      <ion-label class="slider_item-right click-menu h7 animationRight">Click menu to show >></ion-label>
+      <ion-label class="slider_item-right back-to-top h7">Back to top >></ion-label>
     </ion-slide>
   </ion-slides>
   <div class="music" [class.rotate360]="rotate360" (click)="rotateActive()">
     <img src="assets/images/music.png" alt="">
+    <audio #audioOption>
+      <source src='assets/images/music_home.mp3' type="audio/mp3">
+  </audio>
   </div>
 </ion-content>
