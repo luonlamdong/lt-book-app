@@ -1,6 +1,7 @@
 ion-header {
   position: absolute !important;
   background: transparent;
+  height: 60px;
 }
 .slider {
   &_item {
@@ -13,13 +14,14 @@ ion-header {
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
     }
     &-left {
       color: #fff;
       font-family: AV;
       position: absolute;
-      top: 20%;
+      top: 18%;
       left: -7%;
       transform: rotate(-90deg);
     }
@@ -28,7 +30,7 @@ ion-header {
       padding: 20px;
       color: #fff;
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       h2 {
@@ -52,11 +54,12 @@ ion-header {
       color: #fff;
       font-family: AV;
       position: absolute;
-      bottom: 15%;
+      bottom: 18%;
       right: -9%;
-      transform: rotate(90deg);
-      &.back-to-top {
-        transform: rotate(-90deg) !important;
+      &.click-menu {
+        bottom: 15%;
+        right: -14%;
+        animation: totop 1s ease forwards infinite !important;
       }
     }
   }
@@ -84,5 +87,33 @@ ion-header {
     -webkit-transform: rotate(-360deg);
     -moz-transform: rotate(-360deg);
     -o-transform: rotate(-360deg);
+  }
+}
+.animationRight {
+  animation: todown 1s ease forwards infinite;
+}
+@keyframes todown {
+  0% {
+    transform: translateY(0px) rotate(90deg);
+    opacity: 0.5;
+    transition: 0.4s;
+  }
+  100% {
+    transform: translateY(30px) rotate(90deg);
+    opacity: 1;
+    transition: 0.4s;
+  }
+}
+
+@keyframes totop {
+  0% {
+    transform: translateY(0px) rotate(-90deg);
+    opacity: 0.5;
+    transition: 0.4s;
+  }
+  100% {
+    transform: translateY(-30px) rotate(-90deg);
+    opacity: 1;
+    transition: 0.4s;
   }
 }

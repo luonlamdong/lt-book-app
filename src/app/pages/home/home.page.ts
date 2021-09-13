@@ -7,18 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
   option = {
-    loop: true,
     direction: 'vertical'
   };
   rotate360: any = false;
   constructor() {}
 
   ngOnInit(){
-
   }
 
   rotateActive(){
-    if(this.rotate360 == false){
+    if(this.rotate360 === false){
       this.rotate360 = true;
     }
     else{
