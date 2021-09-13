@@ -1,3 +1,7 @@
+ion-header {
+  position: absolute !important;
+  background: transparent;
+}
 .slider {
   &_item {
     width: 100%;
@@ -31,6 +35,9 @@
         line-height: 77px;
         font-family: EN;
       }
+      &.left {
+        text-align: left;
+      }
       &.right {
         text-align: right;
       }
@@ -53,4 +60,10 @@
       }
     }
   }
+}
+.music {
+  position: fixed;
+  left: 5%;
+  bottom: 2%;
+  z-index: 1;
 }
