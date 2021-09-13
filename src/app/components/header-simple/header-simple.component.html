@@ -1,18 +1,13 @@
 <div class="container-fluid">
-  <ion-row class="header">
+  <ion-row class="header" [ngClass]="{'activeHeader' : showMenu === true}">
     <div class="menu" [ngClass]="{'activeButton' : showMenu === true}" (click)="clickMenu()">
       <span></span>
       <span></span>
     </div>
-    <div *ngIf="showMenu===false;else ngMenu" class="logo">
-      <img src="./assets/icon/logo.svg" />
+    <div *ngIf="showMenu===true" class="login">
+      <p (click)="login()">Login</p>
+      <img src="./assets/icon/user1.svg" />
     </div>
-    <ng-template #ngMenu>
-      <div class="login">
-        <p (click)="login()">Login</p>
-        <img src="./assets/icon/user1.svg" />
-      </div>
-    </ng-template>
   </ion-row>
 </div>
 <div class="navBar" [ngStyle]="{ height: menuHeight + 'px'}" [ngClass]="{'activeNavbar' : showMenu === true}">

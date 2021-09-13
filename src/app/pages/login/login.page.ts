@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  menuHeight;
   constructor(
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.menuHeight=window.innerHeight;
   }
   signIn(){
     console.log('login');
