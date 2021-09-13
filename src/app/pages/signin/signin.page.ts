@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.page.scss'],
 })
 export class SigninPage implements OnInit {
+  menuHeight;
 
   constructor() { }
 
   ngOnInit() {
+    this.menuHeight=window.innerHeight;
+
   }
 
 }

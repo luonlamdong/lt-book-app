@@ -3,12 +3,15 @@ import {IonicModule} from '@ionic/angular';
 import {CommonModule} from '@angular/common';
 import {FormBuilder, FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { HeaderSimpleComponent } from './header-simple/header-simple.component';
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    HeaderSimpleComponent
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    HeaderSimpleComponent
   ],
   imports: [
     IonicModule,
