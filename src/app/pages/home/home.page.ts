@@ -28,4 +28,7 @@ export class HomePage implements OnInit{
       this.audioPlayerRef.nativeElement.pause();
     }
   }
+  backToTop(){
+    window.scrollTo(0, 0);
+  }
 }
