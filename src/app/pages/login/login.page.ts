@@ -19,4 +19,8 @@ export class LoginPage implements OnInit {
     console.log('login');
     this.router.navigateByUrl('/signin');
   }
+  login(){
+    console.log('login');
+    this.router.navigateByUrl('/account');
+  }
 }
