@@ -22,18 +22,28 @@ export class HeaderSimpleComponent implements OnInit {
       await this.router.navigateByUrl('/login');
     }, 1500);
   }
-  goHome() {
+
+  goPage(page){
     this.showMenu = !this.showMenu;
-    setTimeout(async () => {
-      await this.router.navigateByUrl('/home');
-    }, 1500);
-  }
-  goProduct() {}
-  goAbout() {}
-  goContact(){
-    this.showMenu = !this.showMenu;
-    setTimeout(async () => {
-      await this.router.navigateByUrl('/contact');
-    }, 1500);
+    switch (page){
+      case 'home':
+        setTimeout(async () => {
+          await this.router.navigateByUrl('/home');
+        }, 1500);
+        break;
+      case 'product':
+        console.log('product');
+        setTimeout(async () => {
+          await this.router.navigateByUrl('/product');
+        }, 1500);
+        break;
+      case 'contact':
+        setTimeout(async () => {
+          await this.router.navigateByUrl('/contact');
+        }, 1500);
+        break;
+      case 'about':
+        break;
+    }
   }
 }
