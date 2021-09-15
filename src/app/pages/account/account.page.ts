@@ -69,6 +69,7 @@ export class AccountPage implements OnInit {
 
   ngOnInit() {
     this.menuHeight = window.innerHeight;
+    console.log(this.cartProduct.length);
   }
   onChangeType(type) {
     this.type = type;
