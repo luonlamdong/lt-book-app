@@ -30,7 +30,7 @@
     ion-content {
       --background: transparent;
       font-family: "AV";
-      overflow-y: hidden;
+      position: fixed;
       .form {
         width: 85%;
         margin: 0 auto;

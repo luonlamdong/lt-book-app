@@ -34,7 +34,7 @@ export class AccountPage implements OnInit {
     },
     {
       name: 'Mysthemme',
-      img: './assets/images/book1.jpg',
+      img: './assets/images/book.jpg',
       isCheck: false,
       price: 50000,
       quantity: 5,
@@ -50,7 +50,7 @@ export class AccountPage implements OnInit {
   boughtProduct = [
     {
       name: 'Mysthem',
-      img: './assets/images/book1.jpg',
+      img: './assets/images/book.jpg',
       isCheck: false,
       price: 50000,
       quantity: 5,

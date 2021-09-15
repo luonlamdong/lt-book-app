@@ -84,7 +84,8 @@ export class ProductPage implements OnInit {
       rating: 5
     }
   ];
-
+  menuHeight;
+  wherePage='product';
   listTypeBook: any = [
     {
       name: 'TextBook',
@@ -118,6 +119,7 @@ export class ProductPage implements OnInit {
   ngOnInit() {
     this.labelTypeBook = 'TextBook';
     this.listProduct = this.listProduct1;
+    this.menuHeight=window.innerHeight;
   }
 
   hanldeChangeTypeBook(item){

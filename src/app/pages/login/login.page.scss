@@ -30,7 +30,7 @@
   ion-content {
     --background: transparent;
     font-family: "AV";
-    overflow-y: hidden;
+    position: fixed;
     p {
       font-size: 15px;
       line-height: 20px;

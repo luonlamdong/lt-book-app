@@ -20,7 +20,7 @@
   ion-content {
     --background: transparent;
     font-family: "AV";
-    overflow-y: hidden;
+    position: fixed;
     --color: white;
     .container {
       .title {
