@@ -108,7 +108,7 @@
           of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less 
           normal distribution of letters</p>
       </ion-text>
-      <ion-label class="slider_item-right back-to-top h7">Back to top >></ion-label>
+      <ion-label class="slider_item-right back-to-top h7" (click)="backToTop()">Back to top >></ion-label>
     </ion-slide>
   </ion-slides>
   <div class="music" [class.rotate360]="rotate360" (click)="rotateActive()">
