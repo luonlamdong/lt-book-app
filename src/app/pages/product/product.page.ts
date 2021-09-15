@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
+  menuHeight;
+  wherePage='product';
   labelTypeBook: any = '';
   listProduct: any = [];
   listProduct1: any = [
@@ -113,11 +116,16 @@ export class ProductPage implements OnInit {
   ];
   isClick: any = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.menuHeight=window.innerHeight;
     this.labelTypeBook = 'TextBook';
     this.listProduct = this.listProduct1;
+  }
+
+  goDetail(){
+    this.router.navigateByUrl('/product/detail');
   }
 
   hanldeChangeTypeBook(item){

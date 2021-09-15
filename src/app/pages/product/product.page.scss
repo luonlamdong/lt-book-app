@@ -104,9 +104,17 @@ ion-content {
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
           }
-          ion-text {
-            color: #000;
+          p {
+            margin: 0;
             font-family: EN;
+            color: #000;
+          }
+          .rating-product {
+            display: flex;
+            align-items: center;
+            ion-text {
+              margin-right: 5px;
+            }
           }
         }
       }
@@ -152,6 +160,7 @@ ion-content {
     }
     .btn-close {
       margin-top: 5px;
+      font-weight: 500;
     }
     .btn-search {
       img {

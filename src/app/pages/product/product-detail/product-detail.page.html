@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border">
+  <app-header
+    [menuHeight]="menuHeight" [wherePage]="wherePage">
+  </app-header>
+</ion-header>
+<ion-content>
+  <div class="product-detail">
+    <div class="product-detail_info">
+      <div class="product-detail_info-image">
+        <img src="assets/images/book2.jpg" alt="product-detail-image">
+      </div>
+      <div class="product-detail_info-right">
+        <h2 class="h5">MUHTESEM</h2>
+        <p class="h7">Price: 50.000d</p>
+        <div class="rating-product">
+          <p class="h7" style="margin-right: 5px;">Rating:</p>
+          <ng-rating-bar 
+            [value]="4" 
+            [ratingCount]="5" 
+            colorActive = "#FFC107"
+            [styles]="{fontSize: '22px', margin: '-5px'}"
+          ></ng-rating-bar>
+        </div>
+        <p class="h7">Sold: 2000</p>
+        <button class="h7">
+          Buy Now
+        </button>
+      </div>
+    </div>
+    <div class="product-detail_description">
+      <ion-text class="h6">Decription</ion-text>
+      <p class="h6">It is a long established fact that a reader will be distracted by the readable content 
+        of a page when looking at its layout. The point of using Lorem Ipsum is that it has a 
+        more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
+        making it look like readable English. Many desktop publishing packages and web page editors now use 
+        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites 
+        still in their infancy. Various versions have evolved over the years, sometimes by accident, 
+        sometimes on purpose (injected humour and the like).</p>
+    </div>
+    <div class="product-detail_artist">
+      <ion-text class="h6">Artist</ion-text>
+      <div class="product-detail_artist-avatar">
+        <img src="assets/images/avatar.jpg" alt="avatar-artist">
+      </div>
+      <p class="h6">Thái Duy Linh</p>
+      <p class="h8">20/09/2000</p>
+    </div>
+    <div class="product-detail_comment">
+      <div class="product-detail_comment-list">
+        <div class="cmt-item">
+          <div class="cmt-item_comment">
+            <div class="cmt-item_comment-image">
+              <img src="assets/images/avt.jpg" alt="cmt">
+            </div>
+            <div class="cmt-item_comment-content h6">
+              Bài viết hay thế nhờ
+            </div>
+          </div>
+          <div class="cmt-item_reply">
+            <p class="h10" style="margin-right: 20px;">5 phút</p>
+            <p class="h10">Phản hồi</p>
+          </div>
+          <div class="cmt-item_replyCmt">
+            <div class="cmt-item_comment-image">
+              <img src="assets/images/avt.jpg" alt="cmt">
+            </div>
+            <div class="cmt-item_comment-content h6">
+              Bài viết hay thế nhờ
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-detail_comment-write">
+        <div class="write-comment">
+          <div class="write-comment_image">
+            <img src="assets/images/avatar.jpg" alt="cmt">
+          </div>
+          <ion-input placeholder="Enter your comment"></ion-input>
+        </div>
+      </div>
+    </div>
+    <div class="product-detail_relate">
+      <ion-label class="h4">Sản phẩm liên quan</ion-label>
+      <ion-slides [options]="slideOpts" >
+        <ion-slide *ngFor="let item of listProductRelate">
+          <div class="shadow"></div>
+          <div class="relate-item-image">
+            <img [src]="item.imageURL" alt="relate-book">
+          </div>
+          <ion-text class="h6">{{item.name}}</ion-text>
+        </ion-slide>
+      </ion-slides>
+    </div> 
+  </div>
+</ion-content>
