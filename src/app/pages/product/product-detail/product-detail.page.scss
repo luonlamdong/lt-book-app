@@ -1,0 +1,230 @@
+ion-header {
+  background-color: #000;
+}
+ion-content {
+  .product-detail {
+    padding: 20px;
+    &_info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-image {
+        width: 50%;
+        height: 240px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px 0 10px 0;
+        }
+      }
+      &-right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 20px;
+        h2 {
+          margin: 0;
+          font-family: EB;
+          line-height: 32px;
+        }
+        p {
+          margin: 0;
+          font-family: EN;
+          color: #000;
+        }
+        .rating-product {
+          display: flex;
+          align-items: center;
+        }
+        button {
+          margin-top: 13px;
+          background: linear-gradient(
+            90deg,
+            #085a50 0%,
+            rgba(8, 90, 80, 0.79) 100%
+          );
+          width: 121px;
+          height: 35px;
+          border-radius: 25px;
+          color: #fff;
+          font-family: ESB;
+          &:active {
+            background: linear-gradient(
+              90deg,
+              #021d1a 0%,
+              rgba(3, 41, 36, 0.79) 100%
+            );
+          }
+        }
+      }
+    }
+    &_description {
+      margin-top: 50px;
+      width: 100%;
+      text-align: center;
+      ion-text {
+        font-family: EB;
+      }
+      p {
+        font-family: EN;
+      }
+    }
+    &_artist {
+      margin-top: 50px;
+      width: 100%;
+      text-align: center;
+      &-avatar {
+        margin-top: 15px;
+        img {
+          width: 120px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      ion-text {
+        font-family: EB;
+      }
+      p {
+        margin: 0;
+        font-family: EN;
+      }
+    }
+    &_comment {
+      margin-top: 30px;
+      &-list {
+        background: #d3d3d3;
+        padding: 15px;
+        border-radius: 5px 5px 0 0;
+        .cmt-item {
+          &_comment {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            &-image {
+              margin-right: 10px;
+              width: 15%;
+              img {
+                width: 45px;
+                height: 45px;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+            }
+            &-content {
+              width: 85%;
+              background: #fff;
+              padding: 10px;
+              border-radius: 10px;
+              font-family: EN;
+            }
+          }
+          &_reply {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+            p {
+              margin: 0;
+              color: #999999;
+              font-family: EN;
+            }
+          }
+          &_replyCmt {
+            margin-left: 50px;
+            display: flex;
+            align-items: center;
+            .cmt-item_comment-image {
+              width: 15%;
+              img {
+                width: 35px;
+                height: 35px;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+      &-write {
+        background: #d9d9d9;
+        margin-top: 1px;
+        border-radius: 0 0 5px 5px;
+        padding: 15px;
+        .write-comment {
+          display: flex;
+          align-items: center;
+          &_image {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            img {
+              width: 30px;
+              height: 30px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+          ion-input {
+            height: 34px;
+            border-radius: 10px;
+            font-family: EN;
+            background: #fff;
+          }
+        }
+      }
+    }
+    &_relate {
+      text-align: center;
+      margin: 26px -10px 0 -10px;
+      ion-label {
+        font-family: EB;
+      }
+      ion-slides {
+        ion-slide {
+          width: 127px !important;
+          height: 185px;
+          margin-right: 10px;
+          .relate-item-image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 10px;
+            }
+          }
+          ion-text {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-family: ESB;
+          }
+          .shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.562);
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            z-index: 10;
+          }
+          &.swiper-slide-active {
+            width: 140px;
+            height: 200px;
+            .shadow {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

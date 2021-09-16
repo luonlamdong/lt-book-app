@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProductPageRoutingModule } from './product-routing.module';
+import { ProductDetailPageRoutingModule } from './product-detail-routing.module';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { ProductPage } from './product.page';
+import { ProductDetailPage } from './product-detail.page';
 import { NgRatingBarModule } from 'ng-rating-bar';
 
 @NgModule({
@@ -14,10 +14,10 @@ import { NgRatingBarModule } from 'ng-rating-bar';
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductPageRoutingModule,
+    ProductDetailPageRoutingModule,
     ComponentsModule,
     NgRatingBarModule
   ],
-  declarations: [ProductPage]
+  declarations: [ProductDetailPage]
 })
-export class ProductPageModule {}
+export class ProductDetailPageModule {}
