@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
@@ -10,6 +11,14 @@ export class AccountPage implements OnInit {
   menuHeight;
   wherePage = 'account';
   type = 'cart';
+  account = {
+    name: 'Josh Germany',
+    position: 'Member',
+    address: '9/4 Tân Tiến, XTĐ, HM',
+    phone: '0344153437',
+    email: 'trung08052000@gmail.com',
+    avtUrl: './assets/images/avt.jpg',
+  };
   cartProduct = [
     {
       name: 'Mysthem',
@@ -63,9 +72,121 @@ export class AccountPage implements OnInit {
       quantity: 5,
     },
   ];
+  listBillProduct = [
+    {
+      idBill: '1023545',
+      name: 'Đơn hàng MS0121',
+      status: 'now',
+      orderDaily: '16/09/2021',
+      total: 500000,
+    },
+    {
+      idBill: '1023546',
+      name: 'Đơn hàng MS0123',
+      status: 'now',
+      orderDaily: '16/09/2021',
+      total: 500000,
+    },
+    {
+      idBill: '1023547',
+      name: 'Đơn hàng MS0121',
+      status: 'done',
+      orderDaily: '16/09/2021',
+      total: 500000,
+    },
+    {
+      idBill: '1023548',
+      name: 'Đơn hàng MS0124',
+      status: 'done',
+      orderDaily: '16/09/2021',
+      total: 500000,
+    },
+  ];
+  listBillProductDetail = [
+    {
+      idBill: '1023545',
+      product: [
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+      ],
+    },
+    {
+      idBill: '1023546',
+      product: [
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+      ],
+    },
+    {
+      idBill: '1023547',
+      product: [
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+      ],
+    },
+    {
+      idBill: '1023548',
+      product: [
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+      ],
+    },
+  ];
+  billProductDetail = {
+    idBill: '',
+    product: [],
+  };
   chooseAll = true;
   allProduct = [];
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.menuHeight = window.innerHeight;
@@ -122,5 +243,11 @@ export class AccountPage implements OnInit {
       }
     });
     console.log(this.allProduct);
+  }
+  billDetail(item) {
+    console.log(item);
+  }
+  editInfo() {
+    this.router.navigateByUrl('/account/edit');
   }
 }

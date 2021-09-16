@@ -7,14 +7,15 @@
   <div class="borderheader"></div>
   <div class="information">
     <div class="information-avt">
-      <img src="./assets/images/avt.jpg" alt="">
+      <img [src]="account.avtUrl" alt="">
     </div>
     <div class="information_profile">
       <div class="information_profile-name">
-        <p>Josh Germany</p>
+        <p>{{account.name}}</p>
+        <img src="./assets/icon/edit.svg" alt="" style="width:12px;height:12px" (click)="editInfo()">
       </div>
       <div class="information_profile-type">
-        <span>Member</span>
+        <span>{{account.position}}</span>
       </div>
       <ion-row class="information_profile-product">
         <ion-col size="7" class="incard">
@@ -86,9 +87,36 @@
         </div>
       </div>
       <div *ngSwitchCase="'yourOrder'" class="project-ground">
-        đang tính mua nè
+        <div *ngFor="let item of listBillProduct;index as i" class="product" (click)="billDetail(item)">
+          <div class="product_information" style="width:100%" >
+            <div *ngIf="item.status === 'done';else nowTemplate" class="product_information-img done">
+              <img src="./assets/icon/check.svg" alt="done" class="icon">
+            </div>
+            <ng-template #nowTemplate>
+              <div class="product_information-img now">
+                <img src="./assets/icon/box.svg" alt="now" class="icon">
+              </div>
+            </ng-template>
+            <div class="product_information-item">
+              <div class="name">{{item.name}}</div>
+              <div class="prop">Total: {{item.total}} đ</div>
+              <div class="prop">Order daily: {{item.orderDaily}}</div>
+            </div>
+            <div *ngIf="item.status==='done';else delivering" class="product-total" style="color: #1EA22B;">
+              Delivered
+            </div>
+            <ng-template #delivering>
+              <div class="product-total" style="color: #E6CC06;">
+                Delivering
+              </div>
+            </ng-template>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="popUpInfoProduct">
+
   </div>
 </ion-content>
 <ion-footer>

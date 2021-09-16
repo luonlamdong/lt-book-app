@@ -42,6 +42,10 @@ ion-header {
       width: 65%;
       &-name {
         font-size: 20px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
       &-type {
         color: #c0c0c0;
@@ -138,6 +142,22 @@ ion-content {
           height: 100%;
           object-fit: cover;
         }
+      }
+      .done {
+        position: relative;
+        background: linear-gradient(90deg, #23c933 0%, #1d9e2a 86.79%);
+      }
+      .icon {
+        position: absolute;
+        top: 50%;
+        width: 25px;
+        height: 25px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .now {
+        position: relative;
+        background: linear-gradient(90deg, #ffd600 0%, #dec907 86.79%);
       }
       &-item {
         color: black;

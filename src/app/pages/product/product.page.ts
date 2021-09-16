@@ -87,8 +87,6 @@ export class ProductPage implements OnInit {
       rating: 5
     }
   ];
-  menuHeight;
-  wherePage='product';
   listTypeBook: any = [
     {
       name: 'TextBook',
