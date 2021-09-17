@@ -43,6 +43,14 @@ export class HeaderSimpleComponent implements OnInit {
         }, 1500);
         break;
       case 'about':
+        setTimeout(async () => {
+          await this.router.navigateByUrl('/about');
+        }, 1500);
+        break;
+      case 'blog':
+        setTimeout(async () => {
+          await this.router.navigateByUrl('/blog');
+        }, 1500);
         break;
     }
   }
