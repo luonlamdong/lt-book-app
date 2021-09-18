@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
@@ -11,6 +11,7 @@ export class AccountPage implements OnInit {
   menuHeight;
   wherePage = 'account';
   type = 'cart';
+  activePopup = false;
   account = {
     name: 'Josh Germany',
     position: 'Member',
@@ -21,55 +22,69 @@ export class AccountPage implements OnInit {
   };
   cartProduct = [
     {
+      id:1,
       name: 'Mysthem',
       img: './assets/images/book2.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 5
     },
     {
+      id:2,
       name: 'Mysthemme',
       img: './assets/images/book3.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 5
     },
     {
+      id:3,
       name: 'Mysthemme',
       img: './assets/images/book4.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 2
     },
     {
+      id:4,
       name: 'Mysthemme',
       img: './assets/images/book.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 4
     },
     {
+      id:5,
       name: 'Mysthemme',
       img: './assets/images/book5.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 5
     },
   ];
   boughtProduct = [
     {
+      id:1,
       name: 'Mysthem',
       img: './assets/images/book.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 5
     },
     {
+      id:6,
       name: 'Mysthemme',
       img: './assets/images/book4.jpg',
       isCheck: false,
       price: 50000,
-      quantity: 5,
+      quantity: 1,
+      rating: 5
     },
   ];
   listBillProduct = [
@@ -79,6 +94,7 @@ export class AccountPage implements OnInit {
       status: 'now',
       orderDaily: '16/09/2021',
       total: 500000,
+      transportFee:25000
     },
     {
       idBill: '1023546',
@@ -86,6 +102,7 @@ export class AccountPage implements OnInit {
       status: 'now',
       orderDaily: '16/09/2021',
       total: 500000,
+      transportFee:25000
     },
     {
       idBill: '1023547',
@@ -93,6 +110,7 @@ export class AccountPage implements OnInit {
       status: 'done',
       orderDaily: '16/09/2021',
       total: 500000,
+      transportFee:25000
     },
     {
       idBill: '1023548',
@@ -100,6 +118,7 @@ export class AccountPage implements OnInit {
       status: 'done',
       orderDaily: '16/09/2021',
       total: 500000,
+      transportFee:25000
     },
   ];
   listBillProductDetail = [
@@ -107,7 +126,7 @@ export class AccountPage implements OnInit {
       idBill: '1023545',
       product: [
         {
-          name: 'Mysthem',
+          name: 'Lavie En Rose',
           img: './assets/images/book2.jpg',
           isCheck: false,
           price: 50000,
@@ -120,7 +139,50 @@ export class AccountPage implements OnInit {
           price: 50000,
           quantity: 5,
         },
+        {
+          name: 'Lavie En Rose',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Lavie En Rose',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Lavie En Rose',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        },
+        {
+          name: 'Mysthem',
+          img: './assets/images/book2.jpg',
+          isCheck: false,
+          price: 50000,
+          quantity: 5,
+        }
       ],
+      method:'vnpay'
     },
     {
       idBill: '1023546',
@@ -140,6 +202,7 @@ export class AccountPage implements OnInit {
           quantity: 5,
         },
       ],
+      method:'cashmoney'
     },
     {
       idBill: '1023547',
@@ -159,6 +222,7 @@ export class AccountPage implements OnInit {
           quantity: 5,
         },
       ],
+      method:'cashmoney'
     },
     {
       idBill: '1023548',
@@ -178,12 +242,10 @@ export class AccountPage implements OnInit {
           quantity: 5,
         },
       ],
+      method:'cashmoney'
     },
   ];
-  billProductDetail = {
-    idBill: '',
-    product: [],
-  };
+  billProductDetail: any = {};
   chooseAll = true;
   allProduct = [];
   constructor(private router: Router) {}
@@ -243,9 +305,26 @@ export class AccountPage implements OnInit {
       }
     });
     console.log(this.allProduct);
+    const navigationExtras: NavigationExtras = {
+      state: { listBook: this.allProduct, listBill:this.listBillProduct, listBillDetails:this.listBillProductDetail },
+    };
+    this.allProduct=[];
+    this.router.navigateByUrl('/account/payment', navigationExtras);
   }
   billDetail(item) {
-    console.log(item);
+    this.activePopup = true;
+    this.billProductDetail= item;
+    this.listBillProductDetail.forEach(e => {
+      if(e.idBill === item.idBill){
+        this.billProductDetail.product = e.product;
+        this.billProductDetail.paymentMethod=e.method;
+      }
+    });
+    console.log(this.billProductDetail);
+    const navigationExtras: NavigationExtras = {
+      state: { billProductDetail: this.billProductDetail },
+    };
+    this.router.navigateByUrl('/account/detail-bill', navigationExtras);
   }
   editInfo() {
     this.router.navigateByUrl('/account/edit');

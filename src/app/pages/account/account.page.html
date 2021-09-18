@@ -58,7 +58,8 @@
             <div class="product_information-item">
               <div class="name">{{item.name}}</div>
               <div class="prop">Price: {{item.price}} đ</div>
-              <div class="prop">Quantity: {{item.quantity}}</div>
+              <div class="prop">Rating: <ng-rating-bar disabled="true" [value]="item.rating" [ratingCount]="5" colorActive="#FFC107"
+                [styles]="{fontSize: '18px', margin: '-5px'}"></ng-rating-bar></div>
             </div>
             <div class="product-total">
               Total: {{item.price * item.quantity}}
@@ -78,7 +79,8 @@
             <div class="product_information-item">
               <div class="name">{{item.name}}</div>
               <div class="prop">Price: {{item.price}} đ</div>
-              <div class="prop">Quantity: {{item.quantity}}</div>
+              <div class="prop">Rating: <ng-rating-bar disabled="true" [value]="item.rating" [ratingCount]="5" colorActive="#FFC107"
+                [styles]="{fontSize: '18px', margin: '-5px'}"></ng-rating-bar></div>
             </div>
             <div class="product-total">
               Total: {{item.price * item.quantity}}
@@ -88,7 +90,7 @@
       </div>
       <div *ngSwitchCase="'yourOrder'" class="project-ground">
         <div *ngFor="let item of listBillProduct;index as i" class="product" (click)="billDetail(item)">
-          <div class="product_information" style="width:100%" >
+          <div class="product_information" style="width:100%">
             <div *ngIf="item.status === 'done';else nowTemplate" class="product_information-img done">
               <img src="./assets/icon/check.svg" alt="done" class="icon">
             </div>
@@ -114,9 +116,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="popUpInfoProduct">
-
   </div>
 </ion-content>
 <ion-footer>

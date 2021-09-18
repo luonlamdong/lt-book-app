@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AccountPageRoutingModule } from './account-routing.module';
 import { AccountPage } from './account.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { NgRatingBarModule } from 'ng-rating-bar';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     AccountPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    NgRatingBarModule
   ],
   declarations: [AccountPage]
 })
