@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <app-header
+  [menuHeight]="menuHeight" [wherePage]="wherePage"></app-header>
+</ion-header>
+<ion-content class="blog-detail">
+  <div class="blog-detail_content">
+    <h1>Hôm nay là thứ mấy?</h1>
+    <ion-text>Thu, 9 2021</ion-text>
+    <img src="assets/images/book2.jpg" alt="image-book-detail">
+    <p>It is a long established fact that a reader will 
+      be distracted by the readable content of a page when looking at i
+      ts layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+      distribution of letters.It is a long established fact that a reader will be 
+      distracted by the readable content of a page when looking at its layout. 
+      The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+       of letters.It is a long established fact that a reader will be distracted by 
+       the readable content of a page when looking at its layout. The point of using 
+       Lorem Ipsum is that it has a more-or-less normal distribution of letters.It is 
+       a long established fact that a reader will be distracted by the readable content 
+       of a page when looking at its layout. The point of using Lorem Ipsum is that it 
+       has a more-or-less normal distribution of letters.It is a long established fact 
+       that a reader will be distracted by the readable content of a page when looking at 
+       its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+       distribution of letters.It is a long established fact that a reader will be 
+       distracted by the readable content of a page when looking at its layout. 
+       The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+  </div>
+  <div class="blog-detail_relate-blog">
+    <ion-text>Related articles</ion-text>
+    <div class="blog">
+      <ion-card class="blog_item" *ngFor="let item of listBlogRelate">
+        <div class="blog_item-image">
+          <img [src]="item.imageUrl" alt="blog-image">
+        </div>
+        <div class="blog_item-grey"></div>
+        <div class="blog_item-description">
+          <ion-text>{{item.name}}</ion-text>
+          <p class="h10">{{item.content}}</p>
+          <p class="h10" style="text-align: right; padding-right: 10px;">{{item.day}}</p>
+        </div>
+        <img class="blog_item-flag" src="assets/images/flag.png" alt="flag">
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

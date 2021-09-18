@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <app-header
+  [menuHeight]="menuHeight" [wherePage]="wherePage"></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="blog-page" style="background-image: url('assets/images/background-blog.png');">
+    <h1>Blog</h1>
+    <div class="blog">
+      <ion-card class="blog_item" *ngFor="let item of listBlog" (click)="goDetail()">
+        <div class="blog_item-image">
+          <img [src]="item.imageUrl" alt="blog-image">
+        </div>
+        <div class="blog_item-grey"></div>
+        <div class="blog_item-description">
+          <ion-text>{{item.name}}</ion-text>
+          <p class="h10">{{item.content}}</p>
+          <p class="h10" style="text-align: right; padding-right: 10px;">{{item.day}}</p>
+        </div>
+        <img class="blog_item-flag" src="assets/images/flag.png" alt="flag">
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

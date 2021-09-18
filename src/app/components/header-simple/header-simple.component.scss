@@ -45,9 +45,9 @@
   }
 }
 .activeHeader {
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
   .activeButton {
     height: auto;
     span {
@@ -77,8 +77,9 @@
   transition-delay: 1.2s;
   z-index: 1;
   .menu {
-    margin-top: 108px;
+    margin-top: 80px;
     p {
+      margin: 10px 0;
       font-family: "ESB";
       font-size: 24px;
       opacity: 0;
@@ -98,6 +99,9 @@
       }
       &:nth-child(4) {
         transition-delay: 0.6s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.5s;
       }
     }
     .active {
@@ -161,6 +165,9 @@
       }
       &:nth-child(4) {
         transition-delay: 0.6s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.5s;
       }
     }
   }

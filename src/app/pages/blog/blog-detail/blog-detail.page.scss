@@ -1,0 +1,95 @@
+ion-header {
+  background: black;
+}
+.blog-detail {
+  &_content {
+    padding: 0 20px;
+    h1 {
+      font-family: ESB;
+    }
+    ion-text {
+      font-family: EN;
+    }
+    img {
+      margin-top: 15px;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    p {
+      font-family: EN;
+    }
+  }
+  &_relate-blog {
+    margin-top: 30px;
+    padding: 0 20px;
+    ion-text {
+      font-family: ESB;
+    }
+    .blog {
+      width: 100%;
+      margin-top: -70px;
+      ion-card {
+        margin: 0;
+        border-radius: 10px;
+      }
+      &_item {
+        width: 100%;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px !important;
+        position: relative;
+        &:first-child {
+          margin-top: 100px !important;
+        }
+        &:last-child {
+          margin-bottom: 30px !important;
+        }
+        &-flag {
+          position: absolute;
+          top: 0;
+          right: 20px;
+        }
+        &-image {
+          width: 33%;
+          height: 100%;
+          text-align: right;
+          img {
+            width: 90%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 0px 0px 10px;
+          }
+        }
+        &-grey {
+          width: 2%;
+          height: 100%;
+          background: #c4c4c4;
+        }
+        &-description {
+          width: 65%;
+          height: 100%;
+          padding-left: 10px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          padding-top: 10px;
+          ion-text {
+            font-family: ESB;
+            color: #000;
+            font-size: 18px;
+            @media only screen and (max-width: 320px) {
+              font-size: 16px;
+            }
+          }
+          p {
+            margin: 0;
+            font-family: EN;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}

@@ -28,6 +28,10 @@ ion-content {
           margin: 0;
           font-family: EB;
           line-height: 32px;
+          font-size: 18px;
+          @media only screen and (max-width: 320px) {
+            font-size: 16px;
+          }
         }
         p {
           margin: 0;
@@ -37,6 +41,9 @@ ion-content {
         .rating-product {
           display: flex;
           align-items: center;
+          @media only screen and (max-width: 360px) {
+            display: block;
+          }
         }
         button {
           margin-top: 13px;
