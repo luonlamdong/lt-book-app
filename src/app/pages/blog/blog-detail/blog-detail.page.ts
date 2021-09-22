@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.page.html',
   styleUrls: ['./blog-detail.page.scss'],
 })
 export class BlogDetailPage implements OnInit {
-  menuHeight;
-  wherePage='blog';
   listBlogRelate: any = [
     {
       imageUrl: 'assets/images/book.jpg',
@@ -40,10 +38,12 @@ export class BlogDetailPage implements OnInit {
       day: 'Thu, 9 2021',
     }
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.menuHeight = window.innerHeight;
   }
 
+  goBack(){
+    this.router.navigateByUrl('/blog');
+  }
 }

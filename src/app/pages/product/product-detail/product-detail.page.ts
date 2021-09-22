@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailPage implements OnInit {
 
-  menuHeight;
-  wherePage='product';
   slideOpts = {
     slidesPerView: 'auto',
     loop: true
@@ -39,10 +38,12 @@ export class ProductDetailPage implements OnInit {
       imageURL: 'assets/images/book3.jpg'
     },
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.menuHeight=window.innerHeight;
   }
 
+  goBack(){
+    this.router.navigateByUrl('/product');
+  }
 }

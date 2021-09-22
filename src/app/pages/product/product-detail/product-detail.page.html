@@ -1,7 +1,8 @@
-<ion-header class="ion-no-border">
-  <app-header
-    [menuHeight]="menuHeight" [wherePage]="wherePage">
-  </app-header>
+<ion-header class="ion-no-border container-fluid">
+  <button (click)="goBack()">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </button>
+  <img src="./assets/icon/logo.svg" />
 </ion-header>
 <ion-content>
   <div class="product-detail">

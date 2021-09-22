@@ -1,5 +1,17 @@
 ion-header {
-  background: black;
+  background-color: #000;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    background: transparent;
+    ion-icon {
+      font-size: 30px;
+      color: #fff;
+      padding: 0;
+    }
+  }
 }
 .blog-detail {
   &_content {
