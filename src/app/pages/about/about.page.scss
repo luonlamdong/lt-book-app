@@ -10,6 +10,7 @@ ion-content {
   .first-description {
     position: relative;
     width: 100%;
+    background-color: #fff;
     ion-text {
       width: 100%;
       padding: 0 20px;
@@ -164,7 +165,7 @@ ion-content {
         background: #000;
         width: 90%;
         text-align: left;
-        border-radius: 5px;
+        border-radius: 0px 5px 5px 0;
         ion-text {
           font-family: AV;
           font-size: 25px;
@@ -201,6 +202,7 @@ ion-content {
           padding: 25px 175px 25px 20px;
           text-align: right;
           float: right;
+          border-radius: 5px 0px 0px 5px;
           p {
             text-align: right;
           }

@@ -1,8 +1,10 @@
 <ion-header class="ion-no-border container-fluid">
-  <button (click)="goBack()">
-    <ion-icon name="arrow-back-outline"></ion-icon>
-  </button>
-  <img src="./assets/icon/logo.svg" />
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="blog"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="h5">Blog Detail</ion-title>
+  </ion-toolbar>
 </ion-header>
 <ion-content class="blog-detail">
   <div class="blog-detail_content">

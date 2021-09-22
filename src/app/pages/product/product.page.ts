@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class ProductPage implements OnInit {
   menuHeight;
   wherePage='product';
+  backgroundShadow: any = false;
   labelTypeBook: any = '';
   listProduct: any = [];
   listProduct1: any = [
@@ -121,7 +122,7 @@ export class ProductPage implements OnInit {
     this.menuHeight=window.innerHeight;
     this.labelTypeBook = 'TextBook';
     this.listProduct = this.listProduct1;
-    this.menuHeight=window.innerHeight;
+    this.menuHeight = window.innerHeight;
   }
 
   goDetail(){
