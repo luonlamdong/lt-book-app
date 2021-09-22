@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'edit',
     loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
+  {
+    path: 'detail-bill',
+    loadChildren: () => import('./detail-bill/detail-bill.module').then( m => m.DetailBillPageModule)
   }
 ];
 
