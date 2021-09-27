@@ -96,3 +96,10 @@ html {
     rgba(0, 0, 0, 0)
   );
 }
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  text-align: right;
+  padding-right: 15px;
+  bottom: 22%;
+}

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'splash',
     pathMatch: 'full'
   },
   {
@@ -45,8 +45,11 @@ const routes: Routes = [
   {
     path: 'blog/detail',
     loadChildren: () => import('./pages/blog/blog-detail/blog-detail.module').then( m => m.BlogDetailPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   }
-
 ];
 
 @NgModule({
