@@ -16,7 +16,7 @@ export class LoadingService {
       if (!existsLoading) {
         this.loading = await this.loadingCtrl.create({
           spinner: 'crescent',
-          message: message,
+          message,
           translucent: true,
           backdropDismiss: false
         });

@@ -8,6 +8,7 @@ import {
   CameraSource,
 } from '@capacitor/core';
 import { Platform } from '@ionic/angular';
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const { Camera, Filesystem } = Plugins;
 
 @Injectable({

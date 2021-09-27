@@ -7,7 +7,7 @@
   <div class="blog-page" style="background-image: url('assets/images/background-blog.png');">
     <h1>Blog</h1>
     <div class="blog">
-      <ion-card class="blog_item" *ngFor="let item of listBlog" (click)="goDetail()">
+      <ion-card class="blog_item" *ngFor="let item of listBlog" (click)="goDetail(item)">
         <div class="blog_item-image">
           <img [src]="item.imageUrl" alt="blog-image">
         </div>

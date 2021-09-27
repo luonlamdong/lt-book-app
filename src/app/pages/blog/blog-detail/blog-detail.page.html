@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border container-fluid">
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button text="" defaultHref="blog"></ion-back-button>
@@ -8,31 +8,15 @@
 </ion-header>
 <ion-content class="blog-detail">
   <div class="blog-detail_content">
-    <h1>Hôm nay là thứ mấy?</h1>
-    <ion-text>Thu, 9 2021</ion-text>
-    <img src="assets/images/book2.jpg" alt="image-book-detail">
-    <p>It is a long established fact that a reader will 
-      be distracted by the readable content of a page when looking at i
-      ts layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
-      distribution of letters.It is a long established fact that a reader will be 
-      distracted by the readable content of a page when looking at its layout. 
-      The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-       of letters.It is a long established fact that a reader will be distracted by 
-       the readable content of a page when looking at its layout. The point of using 
-       Lorem Ipsum is that it has a more-or-less normal distribution of letters.It is 
-       a long established fact that a reader will be distracted by the readable content 
-       of a page when looking at its layout. The point of using Lorem Ipsum is that it 
-       has a more-or-less normal distribution of letters.It is a long established fact 
-       that a reader will be distracted by the readable content of a page when looking at 
-       its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
-       distribution of letters.It is a long established fact that a reader will be 
-       distracted by the readable content of a page when looking at its layout. 
-       The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+    <h1>{{blogDetail.name}}</h1>
+    <ion-text>{{blogDetail.day}}</ion-text>
+    <img [src]="blogDetail.imageUrl" alt="image-book-detail">
+    <p>{{blogDetail.paragraph}}</p>
   </div>
   <div class="blog-detail_relate-blog">
     <ion-text>Related articles</ion-text>
     <div class="blog">
-      <ion-card class="blog_item" *ngFor="let item of listBlogRelate">
+      <ion-card class="blog_item" *ngFor="let item of listBlogRelate" (click)="showBlogRelate(item)">
         <div class="blog_item-image">
           <img [src]="item.imageUrl" alt="blog-image">
         </div>
