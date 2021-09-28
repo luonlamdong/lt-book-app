@@ -7,16 +7,16 @@
   <p class="h3 titlePage" style="text-align: right;padding-right: 20px;margin: 0;">Payment</p>
   <div class="information" (click)="editInfo()">
     <div class="information-name h5 titlePage">
-      Joghs Germany
+      {{inforDelivery.name}}
       <img src="./assets/icon/edit.svg" alt="" style="width:12px;height:12px" (click)="editInfo()">
     </div>
     <div class="information-decrip">
       <img src="./assets/icon/telephone.svg" alt="iconPhone" class="icon">
-      <p class="h9">0344153437</p>
+      <p class="h9">{{inforDelivery.phone}}</p>
     </div>
     <div class="information-decrip">
       <img src="./assets/icon/pin.svg" alt="iconPhone" class="icon">
-      <p class="h9">15 Vo Van Tan, District 3, HoChiMinh</p>
+      <p class="h9">{{inforDelivery.address}}</p>
     </div>
   </div>
 </ion-header>

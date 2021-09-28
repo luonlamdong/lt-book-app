@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
@@ -22,69 +23,69 @@ export class AccountPage implements OnInit {
   };
   cartProduct = [
     {
-      id:1,
+      id: 1,
       name: 'Mysthem',
       img: './assets/images/book2.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 5
+      rating: 5,
     },
     {
-      id:2,
+      id: 2,
       name: 'Mysthemme',
       img: './assets/images/book3.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 5
+      rating: 5,
     },
     {
-      id:3,
+      id: 3,
       name: 'Mysthemme',
       img: './assets/images/book4.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 2
+      rating: 2,
     },
     {
-      id:4,
+      id: 4,
       name: 'Mysthemme',
       img: './assets/images/book.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 4
+      rating: 4,
     },
     {
-      id:5,
+      id: 5,
       name: 'Mysthemme',
       img: './assets/images/book5.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 5
+      rating: 5,
     },
   ];
   boughtProduct = [
     {
-      id:1,
+      id: 1,
       name: 'Mysthem',
       img: './assets/images/book.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 5
+      rating: 5,
     },
     {
-      id:6,
+      id: 6,
       name: 'Mysthemme',
       img: './assets/images/book4.jpg',
       isCheck: false,
       price: 50000,
       quantity: 1,
-      rating: 5
+      rating: 5,
     },
   ];
   listBillProduct = [
@@ -94,7 +95,7 @@ export class AccountPage implements OnInit {
       status: 'now',
       orderDaily: '16/09/2021',
       total: 500000,
-      transportFee:25000
+      transportFee: 25000,
     },
     {
       idBill: '1023546',
@@ -102,7 +103,7 @@ export class AccountPage implements OnInit {
       status: 'now',
       orderDaily: '16/09/2021',
       total: 500000,
-      transportFee:25000
+      transportFee: 25000,
     },
     {
       idBill: '1023547',
@@ -110,7 +111,7 @@ export class AccountPage implements OnInit {
       status: 'done',
       orderDaily: '16/09/2021',
       total: 500000,
-      transportFee:25000
+      transportFee: 25000,
     },
     {
       idBill: '1023548',
@@ -118,7 +119,7 @@ export class AccountPage implements OnInit {
       status: 'done',
       orderDaily: '16/09/2021',
       total: 500000,
-      transportFee:25000
+      transportFee: 25000,
     },
   ];
   listBillProductDetail = [
@@ -180,9 +181,9 @@ export class AccountPage implements OnInit {
           isCheck: false,
           price: 50000,
           quantity: 5,
-        }
+        },
       ],
-      method:'vnpay'
+      method: 'vnpay',
     },
     {
       idBill: '1023546',
@@ -202,7 +203,7 @@ export class AccountPage implements OnInit {
           quantity: 5,
         },
       ],
-      method:'cashmoney'
+      method: 'cashmoney',
     },
     {
       idBill: '1023547',
@@ -222,7 +223,7 @@ export class AccountPage implements OnInit {
           quantity: 5,
         },
       ],
-      method:'cashmoney'
+      method: 'cashmoney',
     },
     {
       idBill: '1023548',
@@ -242,7 +243,7 @@ export class AccountPage implements OnInit {
           quantity: 5,
         },
       ],
-      method:'cashmoney'
+      method: 'cashmoney',
     },
   ];
   billProductDetail: any = {};
@@ -250,7 +251,15 @@ export class AccountPage implements OnInit {
   allProduct = [];
   constructor(private router: Router) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    // this.route.queryParams.subscribe(async () => {
+    //   if (this.router.getCurrentNavigation().extras.state) {
+    //     this.account = (await this.storage.get('AccountInformation')) || {};
+    //     console.log(this.account);
+    //   }else{
+    //     this.storage.set('AccountInformation', this.account);
+    //   }
+    // });
     this.menuHeight = window.innerHeight;
     console.log(this.cartProduct.length);
   }
@@ -306,18 +315,22 @@ export class AccountPage implements OnInit {
     });
     console.log(this.allProduct);
     const navigationExtras: NavigationExtras = {
-      state: { listBook: this.allProduct, listBill:this.listBillProduct, listBillDetails:this.listBillProductDetail },
+      state: {
+        listBook: this.allProduct,
+        listBill: this.listBillProduct,
+        listBillDetails: this.listBillProductDetail,
+      },
     };
-    this.allProduct=[];
+    this.allProduct = [];
     this.router.navigateByUrl('/account/payment', navigationExtras);
   }
   billDetail(item) {
     this.activePopup = true;
-    this.billProductDetail= item;
-    this.listBillProductDetail.forEach(e => {
-      if(e.idBill === item.idBill){
+    this.billProductDetail = item;
+    this.listBillProductDetail.forEach((e) => {
+      if (e.idBill === item.idBill) {
         this.billProductDetail.product = e.product;
-        this.billProductDetail.paymentMethod=e.method;
+        this.billProductDetail.paymentMethod = e.method;
       }
     });
     console.log(this.billProductDetail);
@@ -327,6 +340,9 @@ export class AccountPage implements OnInit {
     this.router.navigateByUrl('/account/detail-bill', navigationExtras);
   }
   editInfo() {
-    this.router.navigateByUrl('/account/edit');
+    const navigationExtras: NavigationExtras = {
+      state: { inForAccount: this.account, isEdit: 'account' },
+    };
+    this.router.navigateByUrl('/account/edit', navigationExtras);
   }
 }

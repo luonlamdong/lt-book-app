@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -18,12 +18,12 @@ export class PaymentPage implements OnInit {
   total = 0;
   deliveryCharges = 40000;
   totalAmount = 0;
-  //     idBill: '1023545',
-  //     name: 'Đơn hàng MS0121',
-  //     status: 'now',
-  //     orderDaily: '16/09/2021',
-  //     total: 500000,
-  //     transportFee:25000
+  inforDelivery={
+    name:'Joghs Germany',
+    phone:'0344153437',
+    address:'15 Vo Van Tan, District 3, HoChiMinh',
+    note:'Giao hàng trong giờ hành chính'
+  };
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -39,7 +39,10 @@ export class PaymentPage implements OnInit {
     this.calculateTotalMoney();
   }
   editInfo() {
-    this.router.navigateByUrl('/account/edit');
+    const navigationExtras: NavigationExtras = {
+      state: { inForAccount: this.inforDelivery, isEdit: 'delivery'},
+    };
+    this.router.navigateByUrl('/account/edit',navigationExtras);
   }
   plus(item) {
     if (item.quantity <= 20) {
@@ -98,11 +101,4 @@ export class PaymentPage implements OnInit {
     //   transportFee: this.deliveryCharges,
     // });
   }
-  // hocCnppm(){
-  //   let baothuc = 1;
-  //   // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-  //   return function buonNgu(){
-  //     return baothuc++;
-  //   }
-  // }
 }

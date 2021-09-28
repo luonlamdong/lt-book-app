@@ -1,9 +1,60 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>edit</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Info</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+    <div class="form">
+      <div class="form_control">
+        <div class="form_control-label h7">
+          <p>Fullname:</p>
+        </div>
+        <div class="form_control-input">
+          <ion-input type="text" [value]='infor.name'>
+          </ion-input>
+        </div>
+      </div>
+      <div class="form_control">
+        <div class="form_control-label h7">
+          <p>Phone:</p>
+        </div>
+        <div class="form_control-input">
+          <ion-input type="number" [value]='infor.phone'>
+          </ion-input>
+        </div>
+      </div>
+      <div class="form_control">
+        <div class="form_control-label h7">
+          <p>Email:</p>
+        </div>
+        <div class="form_control-input">
+          <ion-input type="text" [value]='infor.email'>
+          </ion-input>
+        </div>
+      </div>
+      <div class="form_control" *ngIf="isEdit==='account'">
+        <div class="form_control-label h7">
+          <p>Address:</p>
+        </div>
+        <div class="form_control-input">
+          <ion-input type="text" [value]='infor.address'>
+          </ion-input>
+        </div>
+      </div>
+      <div class="form_control" *ngIf="isEdit === 'delivery'">
+        <div class="form_control-label h7">
+          <p>Note:</p>
+        </div>
+        <div class="form_control-input">
+          <ion-textarea type="text"[value]='infor.note' rows="4"></ion-textarea>
+        </div>
+      </div>
+    </div>
+    <div class="button h5" (click)="save()">Save</div>
+  </div>
 </ion-content>
