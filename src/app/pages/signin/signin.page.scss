@@ -24,6 +24,7 @@
       }
     }
     ion-header {
+      background-color: transparent;
       background: rgba(0, 0, 0, 0.7);
     }
     ion-content {
@@ -112,11 +113,9 @@
           width: 308px;
           height: 202px;
         }
-        background: rgba(0, 0, 0, 0.7);
       }
       ion-header {
         height: 50px;
-        background-color: transparent;
       }
       ion-content {
         .form {
