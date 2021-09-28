@@ -35,7 +35,7 @@ html {
 .titlePage {
   font-family: "AV";
 }
-.form-error-message{
+.form-error-message {
   color: #cf8e25;
   padding-top: 5px;
   display: flex;
@@ -109,4 +109,12 @@ html {
   text-align: right;
   padding-right: 15px;
   bottom: 22%;
+}
+.searchbar-search-icon.sc-ion-searchbar-ios {
+  left: 10px;
+}
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+  .searchbar-input.sc-ion-searchbar-ios {
+  -webkit-padding-start: 40px;
+  padding-inline-start: 40px;
 }

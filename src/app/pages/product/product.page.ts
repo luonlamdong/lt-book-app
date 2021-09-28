@@ -12,6 +12,8 @@ export class ProductPage implements OnInit {
   backgroundShadow: any = false;
   loading: any = false;
   loadingSkeleton: any = false;
+  search: any = false;
+  shadow: any = false;
   labelTypeBook: any = '';
   listProduct: any = [];
   listProduct1: any = [
@@ -252,6 +254,16 @@ export class ProductPage implements OnInit {
         break;
       case 'close':
         this.isClick = false;
+        break;
+      case 'search':
+        this.shadow = true;
+        this.search = true;
+        break;
+      case 'shadow':
+        this.shadow = false;
+        this.search = false;
+        this.isClick = false;
+        break;
     }
   }
 

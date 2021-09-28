@@ -11,6 +11,8 @@ export class ProductDetailPage implements OnInit {
   @ViewChild(IonContent, { static: false }) content: IonContent;
   productDetail: any = {};
   loading: any = false;
+  popup: any = false;
+  shadow: any = false;
   public slideOpts = {
     slidesPerView: 2.1,
     centeredSlides: true,
@@ -229,5 +231,28 @@ export class ProductDetailPage implements OnInit {
       this.content.scrollToTop();
       this.productDetail = item;
     }, 1000);
+  }
+
+  handleBuyProduct(){
+    this.shadow = true;
+    this.popup = true;
+  }
+
+  handleControlButton(type){
+    switch (type){
+      case 'cancel':
+        this.shadow = false;
+        this.popup = false;
+        break;
+      case 'ok':
+        this.shadow = false;
+        this.popup = false;
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+          this.router.navigateByUrl('/product');
+        }, 1000);
+        break;
+    }
   }
 }

@@ -59,18 +59,23 @@
     </div>
   </div>
   <div class="btn-more" [class.btn-active]="isClick" (click)="hanldeClickButtonMore('open')">
-    <img src="assets/icon/more.svg" alt="btn-more">
+    <ion-icon name="ellipsis-vertical"></ion-icon>
   </div>
   <div class="btn-control" [class.btn-active-control]="isClick">
-    <div class="btn-search">
-      <img src="assets/icon/search.svg" alt="btn-more">
+    <div class="btn-search" (click)="hanldeClickButtonMore('search')">
+      <ion-icon name="search-outline"></ion-icon>
     </div>
     <div class="btn-close h5" (click)="hanldeClickButtonMore('close')">
-      x
+      <ion-icon name="close-outline"></ion-icon>
     </div>
   </div>
 </ion-content>
 <div class="loading" *ngIf="loading">
   <div class="loading_shadow"></div>
   <div class="loading_ring"><div></div><div></div><div></div><div></div></div>
+</div>
+<div [class.shadow]="shadow" (click)="hanldeClickButtonMore('shadow')"></div>
+<div class="search" [class.activeSearch]="search">
+  <p>Input text key:</p>
+  <ion-searchbar></ion-searchbar>
 </div>

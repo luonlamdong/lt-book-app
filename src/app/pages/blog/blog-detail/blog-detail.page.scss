@@ -19,8 +19,34 @@ ion-header {
     h1 {
       font-family: ESB;
     }
-    ion-text {
-      font-family: EN;
+    .day-share {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      ion-text {
+        font-family: EN;
+      }
+      button {
+        width: 120px;
+        height: 30px;
+        color: #000;
+        background: #fff;
+        border-radius: 30px;
+        border: 1px solid #000;
+        font-family: ESB;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-icon {
+          font-size: 18px;
+          margin-left: 5px;
+        }
+        &:active {
+          color: #fff;
+          background: #000;
+        }
+      }
     }
     img {
       margin-top: 15px;

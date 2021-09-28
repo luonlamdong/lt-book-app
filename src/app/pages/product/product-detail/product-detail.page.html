@@ -25,7 +25,7 @@
           ></ng-rating-bar>
         </div>
         <p class="h7">Sold: {{productDetail.sold}}</p>
-        <button class="h7">
+        <button class="h7" (click)="handleBuyProduct()">
           Buy Now
         </button>
       </div>
@@ -72,7 +72,10 @@
           <div class="write-comment_image">
             <img src="assets/images/avatar.jpg" alt="cmt">
           </div>
-          <ion-input placeholder="Enter your comment"></ion-input>
+          <div class="write-comment_input">
+            <ion-input placeholder="Enter your comment"></ion-input>
+            <ion-icon name="send"></ion-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -92,4 +95,12 @@
 <div class="loading" *ngIf="loading">
   <div class="loading_shadow"></div>
   <div class="loading_ring"><div></div><div></div><div></div><div></div></div>
+</div>
+<div [class.shadow]="shadow"></div>
+<div class="popup" [class.popupActive]="popup">
+  <p class="h4">Add book to cart?</p>
+  <div class="btn-control">
+    <button (click)="handleControlButton('cancel')">Cancel</button>
+    <button (click)="handleControlButton('ok')">Ok</button>
+  </div>
 </div>
