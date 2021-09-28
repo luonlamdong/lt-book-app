@@ -10,6 +10,8 @@ export class ProductPage implements OnInit {
   menuHeight;
   wherePage='product';
   backgroundShadow: any = false;
+  loading: any = false;
+  loadingSkeleton: any = false;
   labelTypeBook: any = '';
   listProduct: any = [];
   listProduct1: any = [
@@ -140,26 +142,32 @@ export class ProductPage implements OnInit {
     {
       name: 'TextBook',
       icon: 'assets/icon/icon-event.svg',
+      color: '#EE0000'
     },
     {
       name: 'Novel',
       icon: 'assets/icon/icon-event.svg',
+      color: '#0066FF'
     },
     {
       name: 'Comic',
       icon: 'assets/icon/icon-event.svg',
+      color: '#000011'
     },
     {
       name: 'Poem',
       icon: 'assets/icon/icon-event.svg',
+      color: '#009900'
     },
     {
       name: 'Thriller',
       icon: 'assets/icon/icon-event.svg',
+      color: '#330000'
     },
     {
       name: 'Short',
       icon: 'assets/icon/icon-event.svg',
+      color: '#FF6600'
     },
   ];
   isClick: any = false;
@@ -171,13 +179,18 @@ export class ProductPage implements OnInit {
     this.labelTypeBook = 'TextBook';
     this.listProduct = this.listProduct1;
     this.menuHeight = window.innerHeight;
+    this.changeLoading();
   }
 
   goDetail(product){
-    const navigationExtras: NavigationExtras = {
-      state: { item: product },
-    };
-    this.router.navigateByUrl('/product/detail', navigationExtras);
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      const navigationExtras: NavigationExtras = {
+        state: { item: product },
+      };
+      this.router.navigateByUrl('/product/detail', navigationExtras);
+    }, 500);
   }
 
   hanldeChangeTypeBook(item){
@@ -216,5 +229,11 @@ export class ProductPage implements OnInit {
       case 'close':
         this.isClick = false;
     }
+  }
+
+  changeLoading(){
+    setTimeout(() => {
+      this.loadingSkeleton = true;
+    }, 1000);
   }
 }

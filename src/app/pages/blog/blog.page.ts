@@ -9,6 +9,8 @@ import { NavigationExtras, Router } from '@angular/router';
 export class BlogPage implements OnInit {
   menuHeight;
   wherePage='blog';
+  loading: any = false;
+  loadingSkeleton: any = false;
   listBlog: any = [
     {
       imageUrl: 'assets/images/book.jpg',
@@ -51,12 +53,23 @@ export class BlogPage implements OnInit {
 
   ngOnInit() {
     this.menuHeight = window.innerHeight;
+    this.changeLoading();
   }
 
   goDetail(blog){
-    const navigationExtras: NavigationExtras = {
-      state: { item: blog },
-    };
-    this.router.navigateByUrl('/blog/detail', navigationExtras);
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      const navigationExtras: NavigationExtras = {
+        state: { item: blog },
+      };
+      this.router.navigateByUrl('/blog/detail', navigationExtras);
+    }, 1200);
+  }
+
+  changeLoading(){
+    setTimeout(() => {
+      this.loadingSkeleton = true;
+    }, 1000);
   }
 }

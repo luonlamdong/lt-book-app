@@ -172,16 +172,12 @@ export class ProductDetailPage implements OnInit {
     });
   }
 
-  async handleloading() {
+  async handleProductRelate(item) {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
       this.content.scrollToTop();
-    }, 1200);
-  }
-
-  async handleProductRelate(item) {
-    await this.handleloading();
-    this.productDetail = item;
+      this.productDetail = item;
+    }, 1000);
   }
 }
