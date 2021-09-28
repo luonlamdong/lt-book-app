@@ -104,15 +104,14 @@ export class EditPage implements OnInit {
           state: { isEdit: this.isEdit },
         };
         this.router.navigateByUrl('/account', navigationExtras);
+      } else {
+        data.note = this.contentNote;
+        await this.storage.setObject('DeliveryInformation', data);
+        const navigationExtras: NavigationExtras = {
+          state: { isEdit: this.isEdit },
+        };
+        this.router.navigateByUrl('/account/payment', navigationExtras);
       }
-    } else {
-      const data = this.formData.getRawValue();
-      data.note = this.contentNote;
-      await this.storage.setObject('DeliveryInformation', data);
-      const navigationExtras: NavigationExtras = {
-        state: { isEdit: this.isEdit },
-      };
-      this.router.navigateByUrl('/account/payment', navigationExtras);
     }
   }
 }
