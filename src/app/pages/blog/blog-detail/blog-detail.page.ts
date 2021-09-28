@@ -58,16 +58,13 @@ export class BlogDetailPage implements OnInit {
       }
     });
   }
-  async handleloading() {
+
+  async showBlogRelate(item) {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
       this.content.scrollToTop();
-    }, 1200);
-  }
-
-  async showBlogRelate(item) {
-    await this.handleloading();
-    this.blogDetail = item;
+      this.blogDetail = item;
+    }, 1000);
   }
 }
