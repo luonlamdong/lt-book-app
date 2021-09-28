@@ -22,15 +22,14 @@
         width: 318px;
         height: 202px;
       }
-      background: rgba(0, 0, 0, 0.7);
     }
     ion-header {
-      background-color: transparent;
+      background: rgba(0, 0, 0, 0.7);
     }
     ion-content {
       --background: transparent;
       font-family: "AV";
-      position: fixed;
+      background: rgba(0, 0, 0, 0.7);
       .form {
         width: 85%;
         margin: 0 auto;
