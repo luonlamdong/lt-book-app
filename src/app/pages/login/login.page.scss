@@ -90,18 +90,8 @@
     }
     .signIn {
       position: absolute;
-      margin-bottom: 15px;
       left: 50%;
       transform: translateX(-50%);
-    }
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 413px) {
-  .loginPage {
-    ion-content {
-      .signIn {
-        margin-top: 80px;
-      }
     }
   }
 }
@@ -168,7 +158,6 @@
       }
       .signIn {
         position: absolute;
-        margin-top: 80px;
         left: 50%;
         transform: translateX(-50%);
       }
