@@ -10,9 +10,11 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class AccountPage implements OnInit {
   menuHeight;
+  innerWidth;
   wherePage = 'account';
   type = 'cart';
   activePopup = false;
+  loading=true;
   account = {
     name: 'Josh Germany',
     position: 'Member',
@@ -262,6 +264,7 @@ export class AccountPage implements OnInit {
   ) {}
 
   async ngOnInit() {
+    this.loadingProduct();
     this.route.queryParams.subscribe(async () => {
       if (this.router.getCurrentNavigation().extras.state) {
         const currentNavigation = this.router.getCurrentNavigation();
@@ -272,9 +275,12 @@ export class AccountPage implements OnInit {
       }
     });
     this.menuHeight = window.innerHeight;
+    this.innerWidth=window.innerWidth;
     await this.storage.setObject('AccountInformation', this.account);
   }
   onChangeType(type) {
+    this.loading=true;
+    this.loadingProduct();
     this.type = type;
   }
   checkAll() {
@@ -355,5 +361,10 @@ export class AccountPage implements OnInit {
       state: { inForAccount: this.account, isEdit: 'account' },
     };
     this.router.navigateByUrl('/account/edit', navigationExtras);
+  }
+  loadingProduct(){
+    setTimeout(()=>{
+      this.loading = false;
+    },1500);
   }
 }

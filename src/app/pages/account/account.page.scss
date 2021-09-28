@@ -115,6 +115,7 @@ ion-content {
   .product {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     &-checkbox {
       width: 4%;
       margin-right: 2%;
@@ -163,6 +164,7 @@ ion-content {
       &-item {
         color: black;
         margin-left: 18px;
+        width: 50%;
         .name {
           font-family: "ESB";
           font-size: 15px;

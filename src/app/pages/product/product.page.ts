@@ -8,7 +8,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ProductPage implements OnInit {
   menuHeight;
-  wherePage='product';
+  wherePage = 'product';
   backgroundShadow: any = false;
   loading: any = false;
   loadingSkeleton: any = false;
@@ -21,7 +21,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 2000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -31,7 +33,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 2000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -41,7 +45,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 2000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -51,7 +57,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 2000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -61,7 +69,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 2000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -71,10 +81,12 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 2000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
-    }
+    },
   ];
   listProduct2: any = [
     {
@@ -83,7 +95,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 1000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -93,7 +107,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 1000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -103,7 +119,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 1000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -113,7 +131,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 1000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -123,7 +143,9 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 1000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
     },
@@ -133,56 +155,58 @@ export class ProductPage implements OnInit {
       price: '50.000',
       rating: 4,
       sold: 1000,
-      description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      description:
+        // eslint-disable-next-line max-len
+        'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
       artist: 'Thái Duy Linh',
       birthday: '20/09/2000',
-    }
+    },
   ];
   listTypeBook: any = [
     {
       name: 'TextBook',
       icon: 'assets/icon/icon-event.svg',
-      color: '#EE0000'
+      color: '#EE0000',
     },
     {
       name: 'Novel',
       icon: 'assets/icon/icon-event.svg',
-      color: '#0066FF'
+      color: '#0066FF',
     },
     {
       name: 'Comic',
       icon: 'assets/icon/icon-event.svg',
-      color: '#000011'
+      color: '#000011',
     },
     {
       name: 'Poem',
       icon: 'assets/icon/icon-event.svg',
-      color: '#009900'
+      color: '#009900',
     },
     {
       name: 'Thriller',
       icon: 'assets/icon/icon-event.svg',
-      color: '#330000'
+      color: '#330000',
     },
     {
       name: 'Short',
       icon: 'assets/icon/icon-event.svg',
-      color: '#FF6600'
+      color: '#FF6600',
     },
   ];
   isClick: any = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.menuHeight=window.innerHeight;
+    this.menuHeight = window.innerHeight;
     this.labelTypeBook = 'TextBook';
     this.listProduct = this.listProduct1;
     this.menuHeight = window.innerHeight;
     this.changeLoading();
   }
 
-  goDetail(product){
+  goDetail(product) {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
@@ -193,8 +217,8 @@ export class ProductPage implements OnInit {
     }, 500);
   }
 
-  hanldeChangeTypeBook(item){
-    switch(item.name){
+  hanldeChangeTypeBook(item) {
+    switch (item.name) {
       case 'TextBook':
         this.labelTypeBook = item.name;
         this.listProduct = this.listProduct1;
@@ -221,8 +245,8 @@ export class ProductPage implements OnInit {
         break;
     }
   }
-  hanldeClickButtonMore(event){
-    switch(event){
+  hanldeClickButtonMore(event) {
+    switch (event) {
       case 'open':
         this.isClick = true;
         break;
@@ -231,7 +255,7 @@ export class ProductPage implements OnInit {
     }
   }
 
-  changeLoading(){
+  changeLoading() {
     setTimeout(() => {
       this.loadingSkeleton = true;
     }, 1000);
