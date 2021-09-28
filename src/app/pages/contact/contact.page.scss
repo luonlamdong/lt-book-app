@@ -3,8 +3,7 @@
   .blurBackground {
     position: absolute;
     width: 100%;
-    top: 0;
-    bottom: 0;
+    height: 110%;
     background: rgba(0, 0, 0, 0.5);
     .img {
       position: absolute;
@@ -20,7 +19,6 @@
   ion-content {
     --background: transparent;
     font-family: "AV";
-    position: fixed;
     --color: white;
     .container {
       .title {
