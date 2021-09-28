@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
@@ -20,6 +20,12 @@ export class AccountPage implements OnInit {
     phone: '0344153437',
     email: 'trung08052000@gmail.com',
     avtUrl: './assets/images/avt.jpg',
+    inforDelivery: {
+      name: 'Jack97',
+      phone: '0153236523',
+      address: '123456 5 trịu',
+      note: 'J97 5 trịu',
+    },
   };
   cartProduct = [
     {
@@ -249,19 +255,24 @@ export class AccountPage implements OnInit {
   billProductDetail: any = {};
   chooseAll = true;
   allProduct = [];
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private storage: StorageService,
+    private route: ActivatedRoute
+  ) {}
 
   async ngOnInit() {
-    // this.route.queryParams.subscribe(async () => {
-    //   if (this.router.getCurrentNavigation().extras.state) {
-    //     this.account = (await this.storage.get('AccountInformation')) || {};
-    //     console.log(this.account);
-    //   }else{
-    //     this.storage.set('AccountInformation', this.account);
-    //   }
-    // });
+    this.route.queryParams.subscribe(async () => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        const currentNavigation = this.router.getCurrentNavigation();
+        if (currentNavigation.extras.state.isEdit) {
+          this.account =
+            (await this.storage.getObject('AccountInformation')) || {};
+        }
+      }
+    });
     this.menuHeight = window.innerHeight;
-    console.log(this.cartProduct.length);
+    await this.storage.setObject('AccountInformation', this.account);
   }
   onChangeType(type) {
     this.type = type;

@@ -46,6 +46,9 @@ ion-content {
         }
       }
     }
+    &:nth-child(2){
+        margin-top: 10px;
+    }
   }
   .button {
     margin-top: 20px;

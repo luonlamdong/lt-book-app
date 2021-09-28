@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-payment',
@@ -18,31 +19,38 @@ export class PaymentPage implements OnInit {
   total = 0;
   deliveryCharges = 40000;
   totalAmount = 0;
-  inforDelivery={
-    name:'Joghs Germany',
-    phone:'0344153437',
-    address:'15 Vo Van Tan, District 3, HoChiMinh',
-    note:'Giao hàng trong giờ hành chính'
-  };
-  constructor(private router: Router) {}
+  inforDelivery: any = {};
+  constructor(
+    private router: Router,
+    private storage: StorageService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.menuHeight = innerHeight;
-    if (this.router.getCurrentNavigation().extras.state) {
-      const currentNavigation = this.router.getCurrentNavigation();
-      this.listBook = currentNavigation.extras.state.listBook;
-      this.listBill = currentNavigation.extras.state.listBill;
-      this.listBillDetails = currentNavigation.extras.state.listBillDetails;
-      console.log('Danh sách bill hiện tại', this.listBill);
-      console.log('Danh sách book đã mua', this.listBook);
-    }
+    this.route.queryParams.subscribe(async () => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        const currentNavigation = this.router.getCurrentNavigation();
+        this.listBook = currentNavigation.extras.state.listBook;
+        this.listBill = currentNavigation.extras.state.listBill;
+        this.listBillDetails = currentNavigation.extras.state.listBillDetails;
+        console.log('Danh sách bill hiện tại', this.listBill);
+        console.log('Danh sách book đã mua', this.listBook);
+      }
+    });
+    const account = await this.storage.getObject('AccountInformation');
+    this.inforDelivery = account.inforDelivery;
+    console.log(account);
+    // const account = await this.storage.get('AccountInformation');
+    // this.inforDelivery = account.inforDelivery || {};
     this.calculateTotalMoney();
   }
-  editInfo() {
+  async editInfo() {
+    await this.storage.setObject('DeliveryInformation', this.inforDelivery);
     const navigationExtras: NavigationExtras = {
-      state: { inForAccount: this.inforDelivery, isEdit: 'delivery'},
+      state: { inForAccount: this.inforDelivery, isEdit: 'delivery' },
     };
-    this.router.navigateByUrl('/account/edit',navigationExtras);
+    this.router.navigateByUrl('/account/edit', navigationExtras);
   }
   plus(item) {
     if (item.quantity <= 20) {
@@ -90,7 +98,7 @@ export class PaymentPage implements OnInit {
     this.listBillDetails.push(this.billDetails);
     console.log(this.bill);
     console.log(this.billDetails);
-    this.listBook=[];
+    this.listBook = [];
     this.router.navigateByUrl('/account');
     // this.listBill.push({
     //   idBill: '1023549',
