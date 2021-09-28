@@ -33,6 +33,9 @@
           }
           .form_control-input{
             border-bottom: 1px solid #CDB017;
+            ion-input{
+              --color:white;
+            }
           }
       }
       .button{
