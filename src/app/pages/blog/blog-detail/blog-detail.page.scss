@@ -38,6 +38,7 @@ ion-header {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 0.4s;
         ion-icon {
           font-size: 18px;
           margin-left: 5px;
@@ -45,6 +46,7 @@ ion-header {
         &:active {
           color: #fff;
           background: #000;
+          transition: 0.4s;
         }
       }
     }
