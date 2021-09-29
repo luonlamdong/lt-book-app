@@ -2,10 +2,7 @@ ion-header {
   position: absolute !important;
   top: 0;
   left: 0;
-  background: transparent;
-  &.backgroundShadow {
-    background: rgba(0, 0, 0, 0.877);
-  }
+  background: #000;
 }
 ion-content {
   .banner_product {

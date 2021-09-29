@@ -12,7 +12,7 @@ export class ToastService {
     const toast = await this.toastCtrl.create({
       color: 'success',
       duration: 3000,
-      message: message,
+      message,
     });
     await toast.present();
   }
@@ -21,7 +21,7 @@ export class ToastService {
     const toast = await this.toastCtrl.create({
       color: 'danger',
       duration: 3000,
-      message: message,
+      message,
     });
     await toast.present();
   }
@@ -29,7 +29,7 @@ export class ToastService {
   async messageToast(message: string, duration?: number) {
     const toast = await this.toastCtrl.create({
       duration: duration ? duration : 1000,
-      message: message,
+      message,
     });
     await toast.present();
   }
