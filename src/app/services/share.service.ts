@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Plugins} from '@capacitor/core';
-
-const {Share} = Plugins;
+// import {Plugins} from '@capacitor/core';
+import { Share } from '@capacitor/share';
+// const {Share} = Plugins;
 
 @Injectable({
   providedIn: 'root'

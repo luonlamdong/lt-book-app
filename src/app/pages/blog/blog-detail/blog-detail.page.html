@@ -11,7 +11,7 @@
     <h1>{{blogDetail.name}}</h1>
     <div class="day-share">
       <ion-text>{{blogDetail.day}}</ion-text>
-      <button>Share <ion-icon name="share-social-outline"></ion-icon></button>
+      <button (click)="share()">Share <ion-icon name="share-social-outline"></ion-icon></button>
     </div>
     <img [src]="blogDetail.imageUrl" alt="image-book-detail">
     <p>{{blogDetail.paragraph}}</p>

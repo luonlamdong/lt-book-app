@@ -71,12 +71,14 @@ ion-content {
           border-radius: 25px;
           color: #fff;
           font-family: ESB;
+          transition: 0.4s;
           &:active {
             background: linear-gradient(
               90deg,
               #021d1a 0%,
               rgba(3, 41, 36, 0.79) 100%
             );
+            transition: 0.4s;
           }
         }
       }
@@ -336,6 +338,7 @@ ion-content {
       font-family: ESB;
       border: 1px solid #000000;
       border-radius: 30px;
+      transition: 0.4s;
       &:first-child {
         margin-right: 15px;
       }
@@ -343,6 +346,7 @@ ion-content {
         color: #fff;
         border: none;
         background: #000000;
+        transition: 0.4s;
       }
     }
   }

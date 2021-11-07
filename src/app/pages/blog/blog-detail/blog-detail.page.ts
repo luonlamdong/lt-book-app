@@ -1,6 +1,8 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IonContent } from '@ionic/angular';
+import { ShareService } from 'src/app/services/share.service';
+
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.page.html',
@@ -47,7 +49,10 @@ export class BlogDetailPage implements OnInit {
       day: 'Thu, 9 2021',
     }
   ];
-  constructor(private router: Router,private route: ActivatedRoute) { }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private shareService: ShareService,
+  ) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(() => {
@@ -67,4 +72,14 @@ export class BlogDetailPage implements OnInit {
       this.blogDetail = item;
     }, 1000);
   }
+
+  async share(url) {
+    const params = {
+      title: 'Điều diệu kỳ',
+      text: 'Điều diệu kỳ',
+      url: 'https://www.reader.com.vn/review-sach-dieu-ky-dieu-a517.html',
+    };
+    await this.shareService.share(params);
+  }
+
 }
