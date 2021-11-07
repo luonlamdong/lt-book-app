@@ -11,7 +11,6 @@ export class LoginPage implements OnInit {
   constructor(
     private router: Router
   ) { }
-
   ngOnInit() {
     this.menuHeight=window.innerHeight;
   }
